@@ -1,0 +1,92 @@
+@import url(http://fonts.googleapis.com/css?family=Raleway:400,100);
+
+body {
+	background: #000;
+	font-family: 'Raleway', sans-serif;
+	font-weight: 100;
+	margin: 0;
+	padding: 0;
+}
+
+#canvas {
+	width: 100%;
+	height: 100%;
+	position: fixed;
+}
+
+/* message */
+.message {
+	font-size: 4em;
+	text-transform: uppercase;
+	color: #fff;
+	position: absolute;
+	right: 10%;
+	top: 30%;
+}
+
+/* butterfly and motion animations */
+.butterfly_box {
+	position: absolute;
+	height: 229px;
+	width: 350px;
+	top: 50%;
+	left: calc(50% - 175px);
+	//border: 1px solid black;	
+}
+.butterfly {
+	position: absolute;
+	height: 229px;
+	-webkit-transform-origin: center;
+	//animation-name: fly;
+	//animation-duration: 10s;
+	//border: 1px solid white;
+}
+
+@keyframes fly {
+	from {
+		transform: translate(0,0) rotate(0deg);
+	}
+	50% {
+		transform: translate(300px, 300px) rotate(180deg);
+	}
+	to {
+		transform: translate(0px, 500px) rotate(300deg);
+	}	
+}
+
+.leftwing {
+	background: url(leftwing.png);
+	height: 228px;
+	width: 160px;
+	float: left;
+	transform: rotateY(40deg);
+	animation-name: flap;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	animation-iteration-count: infinite;
+	transform-origin: top right;
+}
+
+.rightwing {
+	background: url(rightwing.png);
+	height: 229px;
+	width: 180px;
+	animation-name: flap;
+	animation-duration: 1s;
+	-webkit-animation-duration: 1s;
+	animation-iteration-count: infinite;
+	float: left;
+	transform-origin: top left;
+}
+
+@keyframes flap {
+	from {
+		transform: none;
+	}
+	50% {
+		transform: rotateY(80deg);
+	}
+	to {
+		transform: none;
+	}
+}
