@@ -3,6 +3,8 @@ navigator.getUserMedia = ( navigator.getUserMedia ||
                        navigator.mozGetUserMedia ||
                        navigator.msGetUserMedia);
 
+var window.AudioContext = window.AudioContext || window.webkitAudioContext;
+
 var context = new window.AudioContext();
 navigator.getUserMedia({audio: true}, gotUserAudio, userAudioDenied);
 
